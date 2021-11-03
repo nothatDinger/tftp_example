@@ -1,5 +1,5 @@
-#include<cstring>
-#include "./tftp_packt.h"
+
+#include "tftp_packt.h"
 
 using namespace std;
 
@@ -72,7 +72,7 @@ bool TFTP_Packet::addWord(WORD w) {
 
 }
 
-bool TFTP_Packet::addString(char* str) {
+bool TFTP_Packet::addString(const char* str) {
 
 	int n = strlen(str);
 

@@ -1,4 +1,4 @@
-#include "./tftp_client.h"
+#include "tftp_client.h"
 
 int main(){
 

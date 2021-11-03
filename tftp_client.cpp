@@ -17,7 +17,6 @@
 #include<cstdlib>
 #include<cstdio>
 #include "tftp_client.h"
-#include "tftp_packt.h"
 TFTPClient::TFTPClient(char* ip, int port=69){
     TFTP_Packet packt;
     this->server_ipv4 = ip;
@@ -61,24 +60,67 @@ int TFTPClient::sendPacket(TFTP_Packet* packet){
     return write(socket_descriptor, packet->getData(), packet->getSize());
 }
 
+bool TFTPClient::sendFile(char* filename, char* destination){
+    TFTP_Packet packet_wrq, packet_data;
+    std::ifstream file(filename, std::ifstream::binary);
+    char memBlock[TFTP_PACKET_DATA_SIZE];
+
+    if(!file){
+        logger.ERROR("ERROR to open file when send file");
+        return false;
+    }
+
+    packet_wrq.createWRQ(filename);
+    packet_wrq.dumpData();
+
+    sendPacket(&packet_wrq);
+    int last_packet_number = 0, wait_status, timeout_count=0;
+
+    while(1){
+        wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
+
+        //timeout
+        if( !wait_status){
+            timeout_count ++;
+            logger.DEBUG("Timeout "+std::to_string(timeout_count)+" times when sending file");
+            if( timeout_count >= this->resend_max_count){
+                logger.ERROR("Failed to resend file");
+                return false;
+            }
+            if( last_packet_number == 0)
+                sendPacket(&packet_wrq);
+            else
+                sendPacket(&packet_data);
+        }
+        //得接到ACK再关闭连接
+        if (file.eof()) {
+			break;
+		}
+        //循环分块读入
+        file.read(memBlock, TFTP_PACKET_DATA_SIZE);
+        last_packet_number++;
+        packet_data.createData(last_packet_number, memBlock, file.gcount());
+    }
+    return true;
+
+}
 bool TFTPClient::getFile(char* filename, char* destination){
     TFTP_Packet packet_rrq, packet_ack;
+    //打开接收用的文件
     std::ofstream file(destination, std::ifstream::binary);
-
     if( !file ){
         logger.ERROR("error when open output file");
         return false;
     }
 
     char buffer[TFTP_PACKET_DATA_SIZE];
-
+    //发送RRQ请求
     packet_rrq.createRRQ(filename);
     sendPacket(&packet_rrq);
 
-    int last_packet_number, wait_status, timeout_count;
+    int last_packet_number= 1 , wait_status, timeout_count;
 
     while( 1 ){
-
         wait_status = waitForPacketData(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
 
         //收到了ERROR包
@@ -112,17 +154,19 @@ bool TFTPClient::getFile(char* filename, char* destination){
             sendPacket(&packet_ack);
             continue;
         }
-
+        //收到正常的包
         received_packet.dumpData(); 
         last_packet_number ++;
         timeout_count = 0;
         //2 bytes opcode + 2 bytes packet number
         if( received_packet.copyData( 2 + 2, buffer, TFTP_PACKET_DATA_SIZE)) {
             file.write(buffer, received_packet.getSize() - 2 - 2); 
+
             logger.DEBUG("received packet "+std::to_string(received_packet.getNumber()));
+
             packet_ack.createACK(last_packet_number - 1);
             sendPacket(&packet_ack);
-            if(received_packet.isLastPacket()){
+            if(received_packet.isLastPacket()){//最后一个包
                 break;
             }
             
@@ -132,6 +176,31 @@ bool TFTPClient::getFile(char* filename, char* destination){
     }
     file.close();
     return true;
+}
+bool TFTPClient::waitForPacketACK(WORD packet_number, int timeout_ms){
+    int wait_status = waitForPacket(&this->received_packet, timeout_ms);
+    
+    if(wait_status != TFTP_CLIENT_ERROR_NO_ERROR){
+        return false;
+    }
+
+    if (received_packet.isError()) {
+    	int error_code = received_packet.getWord(2);
+
+        logger.DEBUG("Client received error packet"+ std::to_string(error_code)+" : "\
+            +std::string(error_message[error_code]));
+		return false;
+	}else
+    if( this->received_packet.isACK()){
+        logger.DEBUG("ACK for packet"+std::to_string(received_packet.getNumber())+" , expected: " +std::to_string(packet_number));
+        return true;
+    }
+    if( this->received_packet.isData()){
+        logger.DEBUG("DATA ACK for packet"+std::to_string(received_packet.getNumber())+" , expected: " +std::to_string(packet_number));
+        return true;
+    }
+    return true;
+    
 }
 int TFTPClient::waitForPacketData(WORD packet_number, int timeout_ms){
     int wait_status = waitForPacket(&this->received_packet, timeout_ms);
@@ -186,7 +255,3 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
     return TFTP_CLIENT_ERROR_NO_ERROR;
 
 }
-bool TFTPClient::sendFile(char* filename, char* destination){
-    
-}
-

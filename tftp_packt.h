@@ -1,6 +1,6 @@
 #ifndef TFTP_PACKET
 #define TFTP_PACKET
-
+#include<cstring>
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
 
@@ -16,6 +16,8 @@ typedef unsigned short WORD;
 		//"netascii", "octet", or "mail"
 #define TFTP_DEFAULT_TRANSFER_MODE "octet"
 #define TFTP_ASCII_TRANSFER_MODE "netascii"
+// const char* TFTP_DEFAULT_TRANSFER_MODE="octet";
+// const char* TFTP_ASCII_TRANSFER_MODE="netascii";
 
 class TFTP_Packet {
 
@@ -40,7 +42,7 @@ class TFTP_Packet {
 
 		bool addByte(BYTE b);
 		bool addWord(WORD w);
-		bool addString(char* str);
+		bool addString(const char* str);
 		bool addMemory(char* buffer, int len);
 		
 		BYTE getByte(int offset);
