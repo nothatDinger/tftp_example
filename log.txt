@@ -5,3 +5,8 @@
 请求下载数据:test.txt
 请求下载数据:test.txt
 请求下载数据:test.txt
+[Welcome] /mnt/e/tftp_example/logger.cpp 2021-11-05 20:58:48 : === Start logging ===
+[DEBUG]   /mnt/e/tftp_example/logger.cpp 2021-11-05 20:58:49 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   /mnt/e/tftp_example/logger.cpp 2021-11-05 20:58:51 : getting file, filename: test.txt, destination: success, mode: octet
+[DEBUG]   /mnt/e/tftp_example/logger.cpp 2021-11-05 20:58:52 : send rrq request
+[DEBUG]   /mnt/e/tftp_example/logger.cpp 2021-11-05 20:59:17 : received packet 1

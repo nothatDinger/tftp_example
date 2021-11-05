@@ -37,9 +37,9 @@ int main(int argc, char* argv[]){
 	string type = par.get<string>("type");
 
 	if(type == "get")
-		client.getFile((char* )filename, (char* )host, mode);
+		client.getFile((char* )filename, (char* )filename, mode);
 	if(type == "put"){
-		client.sendFile((char* )filename, (char* )host, mode);
+		client.sendFile((char* )filename, (char* )filename, mode);
 	}
 		
 	return 0;
