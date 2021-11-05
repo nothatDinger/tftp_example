@@ -27,6 +27,7 @@ static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
 
 class TFTPClient {
     private: 
+        struct sockaddr_in* client_addr;
         string server_ipv4;
         int server_port;
         // struct sockaddr_in client_addr;

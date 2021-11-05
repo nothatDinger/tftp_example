@@ -34,32 +34,39 @@ TFTPClient::~TFTPClient(){
 int TFTPClient::UDPconnectServer(){
     logger->DEBUG("Connecting to "+ std::string(this->server_ipv4)+ " on port "+ std::to_string(this->server_port));
 
-    this->socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
+    this->socket_descriptor = socket(AF_INET, SOCK_DGRAM, 0);
     if(this->socket_descriptor == -1){
         logger->ERROR("Socket Create Error");
         return -1;
     }
 
-    struct sockaddr_in client_addr;
-    client_addr.sin_family = AF_INET;
-	client_addr.sin_port = htons(this->server_port);	
-    client_addr.sin_addr.s_addr = inet_addr(this->server_ipv4.c_str());
+    // bzero(client_addr, sizeof(* client_addr));
+    // if(bind(socket_descriptor, (sockaddr*)client_addr, sizeof(*client_addr)) < 0 ){
+    //     logger->ERROR("Unable to bind local port");
+    //     return -1;
+    // }
 
-    this->connection = connect(this->socket_descriptor, (const struct sockaddr *)&client_addr,\
-                        sizeof(client_addr));
+    bzero(client_addr, sizeof(* client_addr));
+    client_addr->sin_family = AF_INET;
+	client_addr->sin_port = htons(this->server_port);	
+   // client_addr->sin_addr.s_addr = inet_addr(this->server_ipv4.c_str());
+    //client_addr->sin_addr.s_addr = htonl(INADDR_ANY);
+    client_addr->sin_addr.s_addr = inet_addr("127.0.0.1");
+    // this->connection = connect(this->socket_descriptor, (const struct sockaddr *)&client_addr,\
+    //                     sizeof(client_addr));
+    // if( this->connection == 0) {
+    //     logger->DEBUG("Unable to connect to Server");
+    //     return -1;
+    // }
 
-    if( this->connection == 0) {
-        logger->DEBUG("Unable to connect to Server");
-        return -1;
-    }
-
-    logger->DEBUG("Successfully connected");
+    //logger->DEBUG("Successfully connected");
     return 1;
 }
 
 int TFTPClient::sendPacket(TFTP_Packet* packet){
     // return write(socket_descriptor, packet->getData(), packet->getSize());
-    return send(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0);
+    //return send(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0);
+    return sendto(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0,(const sockaddr *)client_addr, sizeof(*client_addr));
 }
 
 bool TFTPClient::sendFile(char* filename, char* destination, const char* transfer_mode){
@@ -260,7 +267,7 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
         return TFTP_CLIENT_ERROR_TIMEOUT;
     } 
 
-    int res = read(this->socket_descriptor,(char*)packet->getData(), TFTP_PACKET_MAX_SIZE);  
+    int res = recvfrom(this->socket_descriptor,(char*)packet->getData(0), TFTP_PACKET_MAX_SIZE, 0, (sockaddr *)client_addr, (socklen_t *)sizeof(*client_addr));  
     if( res == 0) {
         logger->ERROR("connection was closed by server");
         return TFTP_CLIENT_ERROR_CONNECTION_CLOSED;
