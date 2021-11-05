@@ -1,6 +1,6 @@
 
 #include "tftp_packt.h"
-
+#define DEBUG 1
 using namespace std;
 
 TFTP_Packet::TFTP_Packet()	{
@@ -42,7 +42,8 @@ void TFTP_Packet::dumpData() {
 	cout << "Size: " << current_packet_size << endl;
 
 	for (int i = 0; i < current_packet_size; i++) {
-		cout << data[i];
+		//cout << data[i];
+		printf("%02x ", data[i]);
 	}
 
 	cout << "\n--------------------------------------------\n\n";
@@ -143,7 +144,7 @@ bool TFTP_Packet::getString(int offset, char* buffer, int len) {
 
 }
 
-bool TFTP_Packet::createRRQ(char* filename) {
+bool TFTP_Packet::createRRQ(char* filename, const char* transfer_mode) {
 
 /*	 2 bytes     string    1 byte     string   1 byte
      Opcode		 Filename  0		  Mode	   0	*/
@@ -152,14 +153,14 @@ bool TFTP_Packet::createRRQ(char* filename) {
 	addWord(TFTP_OPCODE_READ);
 	addString(filename);
 	addByte(0);
-	addString(TFTP_DEFAULT_TRANSFER_MODE);
+	addString(transfer_mode);
 	addByte(0);
 
 	return true;
 
 }
 
-bool TFTP_Packet::createWRQ(char* filename) {
+bool TFTP_Packet::createWRQ(char* filename, const char* transer_mode) {
 
 /*	structure is the same as RRQ  */
 
@@ -167,7 +168,7 @@ bool TFTP_Packet::createWRQ(char* filename) {
 	addWord(TFTP_OPCODE_WRITE);
 	addString(filename);
 	addByte(0);
-	addString(TFTP_DEFAULT_TRANSFER_MODE);
+	addString(transer_mode);
 	addByte(0);
 
 	return true;

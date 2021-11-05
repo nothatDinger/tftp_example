@@ -1,6 +1,8 @@
 #ifndef TFTP_PACKET
 #define TFTP_PACKET
 #include<cstring>
+#include<string>
+#include<iostream>
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
 
@@ -52,8 +54,8 @@ class TFTP_Packet {
 		unsigned char* getData(int offset = 0);
 		bool copyData(int offset, char* dest, int length);
 
-		bool createRRQ(char* filename);
-		bool createWRQ(char* filename);
+		bool createRRQ(char* filename, const char* transfer_mode);
+		bool createWRQ(char* filename, const char* transfer_mode);
 		bool createACK(WORD packet_num);
 		bool createData(WORD block, char* data, int data_size);
 		bool createError(WORD error_code, char* message);

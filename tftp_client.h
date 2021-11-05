@@ -27,24 +27,24 @@ static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
 
 class TFTPClient {
     private: 
-        char* server_ipv4;
+        string server_ipv4;
         int server_port;
         // struct sockaddr_in client_addr;
         int connection;
         int socket_descriptor;
         TFTP_Packet received_packet;
         int resend_max_count;
-        Logger logger;
+        Logger* logger;
     public:
-        TFTPClient(char *ip, int port);
+        TFTPClient( Logger *logger, string ip, int port);
         ~TFTPClient(); 
 
         int sendBuffer(char *);
 		int sendPacket(TFTP_Packet* packet);
 
         int UDPconnectServer();
-        bool getFile(char* filename, char* destination);
-        bool sendFile(char *filename, char* destination);
+        bool getFile(char* filename, char* destination, const char* transfer_mode);
+        bool sendFile(char *filename, char* destination, const char* transfer_mode);
 
         int waitForPacket(TFTP_Packet* packet, int tileout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
         bool waitForPacketACK(WORD packet_number, int timeout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
