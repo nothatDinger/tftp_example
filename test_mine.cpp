@@ -12,6 +12,6 @@ int main(){
 	client.UDPconnectServer();
 
 
-	client.getFile("test.txt", "success", "octet");
+	client.sendFile("test.cpp", "success", "octet");
 	return 0;
 }
