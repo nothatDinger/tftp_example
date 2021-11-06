@@ -1,6 +1,6 @@
 
-#include "tftp_packt.h"
-#define DEBUG 1
+#include "tftp_packet.h"
+
 using namespace std;
 
 TFTP_Packet::TFTP_Packet()	{

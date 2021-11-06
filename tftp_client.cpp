@@ -1,22 +1,4 @@
-#include<iostream>     
-#include<sys/socket.h> 
-#include<netinet/in.h> 
-#include<unistd.h>    
-#include<string.h>     
-#include<sys/sendfile.h>
-#include<string>
-#include<map>
-#include<vector>
-#include<fcntl.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include<sys/types.h>    
-#include<sys/stat.h>
-#include<sys/epoll.h>
-#include<pthread.h>
-#include<errno.h>
-#include<cstdlib>
-#include<cstdio>
+
 #include "tftp_client.h"
 struct sockaddr_in server_addr_;
 TFTPClient::TFTPClient(Logger* logger_,string ip, int port=69){
@@ -33,7 +15,7 @@ TFTPClient::~TFTPClient(){
     close(this->socket_descriptor);
 }
 
-int TFTPClient::UDPconnectServer(){
+int TFTPClient::UDPInitSocket(){
     logger->DEBUG("Connecting to "+ std::string(this->server_ipv4)+ " on port "+ std::to_string(this->server_port));
 
     this->socket_descriptor = socket(PF_INET, SOCK_DGRAM, 0);
@@ -47,12 +29,6 @@ int TFTPClient::UDPconnectServer(){
         logger->ERROR("Unable to bind local port");
         return -1;
     }
-    bzero(&server_addr_, sizeof(server_addr_));
-    
-	if (getsockname(socket_descriptor, (struct sockaddr *)&server_addr_, (socklen_t *)&len) == -1) {
-		printf("Get local port failed (%s)\n", strerror(errno));
-		return -1;
-	}
 
     struct hostent *host = gethostbyname(this->server_ipv4.c_str());
 
@@ -60,44 +36,37 @@ int TFTPClient::UDPconnectServer(){
 	server_addr_.sin_family = host->h_addrtype;
 	server_addr_.sin_port = htons(this->server_port);
 	memcpy(&server_addr_.sin_addr, (struct in_addr *) host->h_addr, sizeof(server_addr_.sin_addr));
-    this->client_addr = &server_addr_;
-    // bzero(client_addr, sizeof(* client_addr));
-    // client_addr->sin_family = AF_INET;
-	// client_addr->sin_port = htons(this->server_port);	
-    // client_addr->sin_addr.s_addr = htonl(INADDR_ANY);
-    //client_addr->sin_addr.s_addr = inet_addr(this->server_ipv4.c_str());
-    
-    //client_addr->sin_addr.s_addr = inet_addr("127.0.0.1");
-    // this->connection = connect(this->socket_descriptor, (const struct sockaddr *)&client_addr,\
-    //                     sizeof(client_addr));
-    // if( this->connection == 0) {
-    //     logger->DEBUG("Unable to connect to Server");
-    //     return -1;
-    // }
+    this->server_addr = &server_addr_;
 
-    //logger->DEBUG("Successfully connected");
+    logger->DEBUG("Socket successfully initialized");
     return 1;
 }
 
 int TFTPClient::sendPacket(TFTP_Packet* packet){
-    // return write(socket_descriptor, packet->getData(), packet->getSize());
-    //return send(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0);
-    return sendto(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0,(const sockaddr *)client_addr, sizeof(*client_addr));
+
+    return sendto(socket_descriptor, (char*)packet->getData(), packet->getSize(), 0,(const sockaddr *)server_addr, sizeof(*server_addr));
 }
 
-bool TFTPClient::sendFile(char* filename, char* destination, const char* transfer_mode){
-    logger->DEBUG("sending file, filename: "+std::string(filename)+", destination: "+std::string(destination)+", mode: "+std::string(transfer_mode));
+bool TFTPClient::sendFile(char* filename, char* destination_filename, const char* transfer_mode){
+    logger->DEBUG("sending file, filename: "+std::string(filename)+", destination_filename:  "+std::string(destination_filename)+", mode: "+std::string(transfer_mode));
 
+
+    string cmd = "cp "+(string)filename+" tmp";
+    system(cmd.c_str());
+    if( transfer_mode == "netascii")
+        unix2dos("tmp");
+    cmd = "rm tmp";
     TFTP_Packet packet_wrq, packet_data;
-    std::ifstream file(filename, std::ifstream::binary);
+    std::ifstream file("tmp", std::ifstream::binary);
     char memBlock[TFTP_PACKET_DATA_SIZE];
 
     if(!file){
         logger->ERROR("ERROR to open file when send file");
+        system(cmd.c_str());
         return false;
     }
 
-    packet_wrq.createWRQ(filename, transfer_mode);
+    packet_wrq.createWRQ(destination_filename, transfer_mode);
     packet_wrq.dumpData();
 
     sendPacket(&packet_wrq);
@@ -112,6 +81,8 @@ bool TFTPClient::sendFile(char* filename, char* destination, const char* transfe
             logger->DEBUG("resend "+std::to_string(timeout_count)+" times when sending file");
             if( timeout_count >= this->resend_max_count){
                 logger->ERROR("Failed to resend file");
+                
+                system(cmd.c_str());
                 return false;
             }
             if( last_packet_number == 0)
@@ -131,20 +102,23 @@ bool TFTPClient::sendFile(char* filename, char* destination, const char* transfe
         packet_data.dumpData();
         sendPacket(&packet_data);
     }
+
+    system(cmd.c_str());
+
     return true;
 
 }
-bool TFTPClient::getFile(char* filename, char* destination, const char* transfer_mode){
-    logger->DEBUG("getting file, filename: "+std::string(filename)+", destination: "+std::string(destination)+", mode: "+std::string(transfer_mode));
+bool TFTPClient::getFile(char* filename, char* destination_filename, const char* transfer_mode){
+    logger->DEBUG("getting file, filename: "+std::string(filename)+", destination_filename: "+std::string(destination_filename)+", mode: "+std::string(transfer_mode));
     TFTP_Packet packet_rrq, packet_ack;
     //打开接收用的文件
     std::ofstream file;
     
     if( ! strcmp((char*)transfer_mode, TFTP_DEFAULT_TRANSFER_MODE)){
-        file.open(destination, std::ofstream::binary|std::ofstream::trunc);
+        file.open(filename, std::ofstream::binary|std::ofstream::trunc);
     } else 
     if( ! strcmp((char*)transfer_mode, TFTP_ASCII_TRANSFER_MODE)){
-        file.open(destination, std::ofstream::out|std::ofstream::trunc);
+        file.open(filename, std::ofstream::out|std::ofstream::trunc);
     } else{
         logger->ERROR("unknown transfer mode: "+ std::string(transfer_mode));
         return false;
@@ -157,7 +131,7 @@ bool TFTPClient::getFile(char* filename, char* destination, const char* transfer
 
     char buffer[TFTP_PACKET_DATA_SIZE];
     //发送RRQ请求
-    packet_rrq.createRRQ(filename, transfer_mode);
+    packet_rrq.createRRQ(destination_filename, transfer_mode);
 
     logger->DEBUG("send rrq request");
     packet_rrq.dumpData();
@@ -213,6 +187,9 @@ bool TFTPClient::getFile(char* filename, char* destination, const char* transfer
             packet_ack.createACK(last_packet_number - 1);
             sendPacket(&packet_ack);
             if(received_packet.isLastPacket()){//最后一个包
+                //netascii模式下，由于我们是unix类操作系统，需要转换'\n'到'\r\n'
+                if( transfer_mode=="netascii")
+                    dos2unix((string)filename);
                 break;
             }
             
@@ -300,13 +277,38 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
         logger->ERROR("socket error when waiting for packet");
         return TFTP_CLIENT_ERROR_RECEIVE;
     }
-    logger->DEBUG(" server port: "+std::to_string(from.sin_port)+"; my port: "+std::to_string(client_addr->sin_port));
-    if( client_addr->sin_port == htons(this->server_port)){
-        client_addr->sin_port = from.sin_port;
+    logger->DEBUG(" server port: "+std::to_string(from.sin_port)+"; my port: "+std::to_string(server_addr->sin_port));
+    if( server_addr->sin_port == htons(this->server_port)){
+        server_addr->sin_port = from.sin_port;
     }
     packet->setSize(res);
     packet->dumpData();
 
     return TFTP_CLIENT_ERROR_NO_ERROR;
 
+}
+
+void dos2unix(string file){
+    std::ifstream is (file.c_str());
+    std::ofstream os ("temp");
+    char c;
+    while (is.get(c))
+        if (c != '\r')
+            os.put(c); 
+
+    string command = "mv temp " + file;
+    system(command.c_str());
+}
+
+void unix2dos(string file){
+    std::ifstream is (file.c_str());
+    std::ofstream os ("temp");
+    char c;
+    while (is.get(c)){
+        if (c == '\n')
+            os.put('\r');
+        os.put(c); 
+    }
+    string command = "mv temp " + file;
+    system(command.c_str());
 }

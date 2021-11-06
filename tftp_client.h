@@ -12,8 +12,15 @@
 #define TFTP_CLIENT_ERROR_NO_ERROR 4
 #define TFTP_CLIENT_ERROR_PACKET_UNEXPECTED 5
 
-#include "tftp_packt.h"
+#include<iostream>     
+#include<sys/socket.h> 
+#include<unistd.h>    
+#include<string>
+#include <netdb.h> 
+#include<sys/stat.h>
+#include "tftp_packet.h"
 #include "logger.h"
+
 static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
    "Not defined, see error message (if any).",
    "File not found.",
@@ -25,9 +32,11 @@ static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
    "No such user.",
 };
 
+void unix2dos(string from);
+void dos2unix(string from);
 class TFTPClient {
     private: 
-        struct sockaddr_in* client_addr;
+        struct sockaddr_in* server_addr;
         string server_ipv4;
         int server_port;
         // struct sockaddr_in client_addr;
@@ -43,7 +52,7 @@ class TFTPClient {
         int sendBuffer(char *);
 		int sendPacket(TFTP_Packet* packet);
 
-        int UDPconnectServer();
+        int UDPInitSocket();
         bool getFile(char* filename, char* destination, const char* transfer_mode);
         bool sendFile(char *filename, char* destination, const char* transfer_mode);
 
