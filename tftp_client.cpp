@@ -70,7 +70,8 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
     packet_wrq.dumpData();
 
     sendPacket(&packet_wrq);
-    int last_packet_number = 0, wait_status, timeout_count=0;
+    unsigned short last_packet_number = 0;//自然溢出
+    int wait_status, timeout_count=0;
 
     while(1){
         wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
@@ -138,7 +139,8 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
     sendPacket(&packet_rrq);
     
     
-    int last_packet_number= 1 , wait_status, timeout_count;
+    unsigned short last_packet_number= 1 ;//自然溢出
+    int wait_status, timeout_count;
 
     while( 1 ){
         wait_status = waitForPacketData(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
