@@ -1,5 +1,6 @@
 cl
 tftp
 log.txt
-.vscode
 .*
+*.o
+test*
