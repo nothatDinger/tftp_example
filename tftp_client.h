@@ -1,7 +1,7 @@
 #ifndef TFTPCLIENT
 #define TFTPCLIENT
 
-#define TFTP_CLIENT_SERVER_TIMEOUT 2
+#define TFTP_CLIENT_SERVER_TIMEOUT 1
 #define TFTP_CLIENT_ERROR_MESSAGE_NUM 8
 #define TFTP_RESEND_DEFAULT_CNT 10
 
@@ -46,6 +46,7 @@ class TFTPClient {
         TFTP_Packet received_packet;
         int resend_max_count;
         Logger* logger;
+        int loss,ack;
     public:
         TFTPClient( Logger *logger, string ip, int port);
         ~TFTPClient(); 
@@ -58,7 +59,7 @@ class TFTPClient {
         bool sendFile(char *filename, char* destination, const char* transfer_mode);
 
         int waitForPacket(TFTP_Packet* packet, int tileout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
-        bool waitForPacketACK(WORD packet_number, int timeout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
+        bool waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket);
 		int waitForPacketData(WORD packet_number, int timeout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
 
         void errorRecieived(TFTP_Packet* error_packet);

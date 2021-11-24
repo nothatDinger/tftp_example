@@ -1,4 +1,3 @@
-
 #include "tftp_client.h"
 struct sockaddr_in server_addr_;
 TFTPClient::TFTPClient(Logger* logger_,string ip, int port=69){
@@ -9,14 +8,17 @@ TFTPClient::TFTPClient(Logger* logger_,string ip, int port=69){
     this->resend_max_count = TFTP_RESEND_DEFAULT_CNT;
     //this->logger = Logger(Logger::terminal, Logger::debug, "./log.txt");
     this->logger = logger_;
+    this->loss = this->ack = 0;
 }
 
 TFTPClient::~TFTPClient(){
+
+    printf("loss rate: %.2lf%%\n",1.0*loss/(loss+ack)*100);
     close(this->socket_descriptor);
 }
 
 int TFTPClient::UDPInitSocket(){
-    logger->DEBUG("Connecting to "+ std::string(this->server_ipv4)+ " on port "+ std::to_string(this->server_port));
+    std::cout<< "Connecting to "+ std::string(this->server_ipv4)+ " on port "+ std::to_string(this->server_port) << std::endl;
 
     this->socket_descriptor = socket(PF_INET, SOCK_DGRAM, 0);
     if(this->socket_descriptor == -1){
@@ -38,7 +40,7 @@ int TFTPClient::UDPInitSocket(){
 	memcpy(&server_addr_.sin_addr, (struct in_addr *) host->h_addr, sizeof(server_addr_.sin_addr));
     this->server_addr = &server_addr_;
 
-    logger->DEBUG("Socket successfully initialized");
+    std::cout<<"Socket successfully initialized\n";
     return 1;
 }
 
@@ -76,16 +78,19 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
 
     struct timespec tn;
     while(1){
-        wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
+        bool is_lastpacket = file.eof();
+        wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT, is_lastpacket);
 
         //timeout
         if( !wait_status){
+            loss ++;
             timeout_count ++;
             logger->WARNING("resend "+std::to_string(timeout_count)+" times when sending file");
             if( timeout_count >= this->resend_max_count){
-                logger->ERROR("Failed to resend file");
-                
                 system(cmd.c_str());
+                if (is_lastpacket)
+                    break;
+                logger->ERROR("Failed to resend file");
                 return false;
             }
             if( last_packet_number == 0)
@@ -94,8 +99,11 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
                 sendPacket(&packet_data);
             continue;
         }
+        timeout_count = 0;
+        ack++;
         //得接到ACK再关闭连接
-        if (file.eof()) {
+        if (is_lastpacket) {
+            cout<<std::endl;
 			break;
 		}
         //循环分块读入
@@ -113,9 +121,9 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
         logger->DEBUG("RCV:"+std::to_string(packet_data.getSize())+"bits  use:"+ std::to_string(end-start)+"nanosecond");
         printf("\rspeed :%dKB/S",  packet_data.getSize() *1000000*8/(end-start) );
     }
-
+    
     system(cmd.c_str());
-
+    cout<<"success\n";
     return true;
 
 }
@@ -151,7 +159,7 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
     
     
     unsigned short last_packet_number= 1 ;//自然溢出
-    int wait_status, timeout_count;
+    int wait_status, timeout_count=0;
     struct timespec tn;
     while( 1 ){
         
@@ -169,13 +177,14 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
             return false;
         }else//发生超时
         if(wait_status == TFTP_CLIENT_ERROR_TIMEOUT){
+            loss ++;
             timeout_count ++;
             if(timeout_count >= this->resend_max_count ){
                 logger->ERROR("There may be connection timeout event");
                 file.close();
                 return false;
             }
-            logger->DEBUG("Timeout "+std::to_string(timeout_count)+" times");
+            logger->ERROR("Timeout "+std::to_string(timeout_count)+" times");
             //first packet timeout， should resend the rrq packet
             if( last_packet_number == 1)
                 sendPacket(&packet_rrq);
@@ -185,6 +194,7 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
             }  
             continue;
         }
+        ack++;
         //收到了失序的包,或其它类型的包
         if(last_packet_number != received_packet.getNumber()){
             logger->ERROR("Unexpected packet number "+std::to_string(received_packet.getNumber())\
@@ -210,9 +220,11 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
             sendPacket(&packet_ack);
             if(received_packet.isLastPacket()){//最后一个包
                 //netascii模式下，由于我们是unix类操作系统，需要转换'\n'到'\r\n'
+                std::cout<<std::endl;
                 if( transfer_mode=="netascii")
                     dos2unix((string)filename);
                 break;
+                
             }
             
 
@@ -220,12 +232,16 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
 
     }
     file.close();
+    cout<<"success\n";
     return true;
 }
-bool TFTPClient::waitForPacketACK(WORD packet_number, int timeout_ms){
+bool TFTPClient::waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket){
     int wait_status = waitForPacket(&this->received_packet, timeout_ms);
     
     if(wait_status != TFTP_CLIENT_ERROR_NO_ERROR){
+        if(wait_status == TFTP_CLIENT_ERROR_CONNECTION_CLOSED && is_lastpacket) {
+            return true;
+        }
         return false;
     }
 
@@ -259,7 +275,7 @@ int TFTPClient::waitForPacketData(WORD packet_number, int timeout_ms){
     if (received_packet.isError()) {
     	int error_code = received_packet.getWord(2);
 
-        logger->DEBUG("Client received error packet"+ std::to_string(error_code)+" : "\
+        logger->ERROR("Client received error packet"+ std::to_string(error_code)+" : "\
             +std::string(error_message[error_code]));
 		return TFTP_CLIENT_ERROR_PACKET_UNEXPECTED;
 	}else
@@ -288,16 +304,18 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
     int select_ready = select(FD_SETSIZE,&fd_reader,NULL,NULL, &connection_timer);
     //int select_ready = select(socket_descriptor+1,&fd_reader,NULL,NULL, &connection_timer);
     if( select_ready < 0){
+        loss ++;
         logger->ERROR("select error when waiting for packet");
         return TFTP_CLIENT_ERROR_SELECT;
     } else 
     if( select_ready == 0 ){
+        loss ++;
         logger->ERROR("select timout while waiting for packet");
         return TFTP_CLIENT_ERROR_TIMEOUT;
     } 
-
     int res = recvfrom(this->socket_descriptor,(char*)packet->getData(0), TFTP_PACKET_MAX_SIZE, 0, (sockaddr *)&from, &fromlen);  
     if( res == 0) {
+        loss ++ ;
         logger->ERROR("connection was closed by server");
         return TFTP_CLIENT_ERROR_CONNECTION_CLOSED;
     } else
@@ -305,6 +323,7 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
         logger->ERROR("socket error when waiting for packet");
         return TFTP_CLIENT_ERROR_RECEIVE;
     }
+    ack++;
 	// clock_gettime(CLOCK_REALTIME, &tn);
     // unsigned int end = tn.tv_nsec;
     // logger->DEBUG("RCV:"+std::to_string(res)+"bits  use:"+ std::to_string(end-start)+"nanosecond");
