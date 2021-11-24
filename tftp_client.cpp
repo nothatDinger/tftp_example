@@ -48,7 +48,7 @@ int TFTPClient::sendPacket(TFTP_Packet* packet){
 }
 
 bool TFTPClient::sendFile(char* filename, char* destination_filename, const char* transfer_mode){
-    logger->DEBUG("sending file, filename: "+std::string(filename)+", destination_filename:  "+std::string(destination_filename)+", mode: "+std::string(transfer_mode));
+    std::cout<<"sending file, filename: "+std::string(filename)+", destination_filename:  "+std::string(destination_filename)+", mode: "+std::string(transfer_mode)<<std::endl;
 
 
     string cmd = "cp "+(string)filename+" tmp";
@@ -68,18 +68,20 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
 
     packet_wrq.createWRQ(destination_filename, transfer_mode);
     packet_wrq.dumpData();
-
+    timespec tv;
+    clock_gettime(CLOCK_REALTIME, &tv);
     sendPacket(&packet_wrq);
     unsigned short last_packet_number = 0;//自然溢出
     int wait_status, timeout_count=0;
 
+    struct timespec tn;
     while(1){
         wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
 
         //timeout
         if( !wait_status){
             timeout_count ++;
-            logger->DEBUG("resend "+std::to_string(timeout_count)+" times when sending file");
+            logger->WARNING("resend "+std::to_string(timeout_count)+" times when sending file");
             if( timeout_count >= this->resend_max_count){
                 logger->ERROR("Failed to resend file");
                 
@@ -101,7 +103,15 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
         last_packet_number++;
         packet_data.createData(last_packet_number, memBlock, file.gcount());
         packet_data.dumpData();
+
+	    clock_gettime(CLOCK_REALTIME, &tn);
+        unsigned int start = tn.tv_nsec;
         sendPacket(&packet_data);
+        clock_gettime(CLOCK_REALTIME, &tn);
+        unsigned int end = tn.tv_nsec;
+
+        logger->DEBUG("RCV:"+std::to_string(packet_data.getSize())+"bits  use:"+ std::to_string(end-start)+"nanosecond");
+        printf("\rspeed :%dKB/S",  packet_data.getSize() *1000000*8/(end-start) );
     }
 
     system(cmd.c_str());
@@ -110,7 +120,7 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
 
 }
 bool TFTPClient::getFile(char* filename, char* destination_filename, const char* transfer_mode){
-    logger->DEBUG("getting file, filename: "+std::string(filename)+", destination_filename: "+std::string(destination_filename)+", mode: "+std::string(transfer_mode));
+    std::cout << "getting file, filename: "+std::string(filename)+", destination_filename: "+std::string(destination_filename)+", mode: "+std::string(transfer_mode)<<std::endl;
     TFTP_Packet packet_rrq, packet_ack;
     //打开接收用的文件
     std::ofstream file;
@@ -130,6 +140,7 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
         return false;
     }
 
+
     char buffer[TFTP_PACKET_DATA_SIZE];
     //发送RRQ请求
     packet_rrq.createRRQ(destination_filename, transfer_mode);
@@ -141,10 +152,16 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
     
     unsigned short last_packet_number= 1 ;//自然溢出
     int wait_status, timeout_count;
-
+    struct timespec tn;
     while( 1 ){
+        
+	    clock_gettime(CLOCK_REALTIME, &tn);
+        unsigned int start = tn.tv_nsec;
+
         wait_status = waitForPacketData(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT);
 
+        clock_gettime(CLOCK_REALTIME, &tn);
+        unsigned int end = tn.tv_nsec;
         //收到了ERROR包
         if( wait_status == TFTP_CLIENT_ERROR_PACKET_UNEXPECTED){
             received_packet.dumpData();
@@ -176,6 +193,9 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
             sendPacket(&packet_ack);
             continue;
         }
+
+        logger->DEBUG("RCV:"+std::to_string(received_packet.getSize())+"bits  use:"+ std::to_string(end-start)+"nanosecond");
+        printf("\rspeed :%dKB/S",  received_packet.getSize() *1000000*8/(end-start) );
         //收到正常的包
         received_packet.dumpData(); 
         last_packet_number ++;
@@ -183,8 +203,8 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
         //2 bytes opcode + 2 bytes packet number
         if( received_packet.copyData( 2 + 2, buffer, TFTP_PACKET_DATA_SIZE)) {
             file.write(buffer, received_packet.getSize() - 2 - 2); 
-
-            logger->DEBUG("received packet "+std::to_string(received_packet.getNumber()));
+            if (received_packet.getNumber() % 10 == 0)
+                logger->DEBUG("received packet "+std::to_string(received_packet.getNumber()));
 
             packet_ack.createACK(last_packet_number - 1);
             sendPacket(&packet_ack);
@@ -250,6 +270,8 @@ int TFTPClient::waitForPacketData(WORD packet_number, int timeout_ms){
 }
 
 int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
+
+
     packet->clear();
     fd_set fd_reader;
     timeval connection_timer;
@@ -258,6 +280,10 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
 	socklen_t fromlen = sizeof(from);
     connection_timer = timeval{ timeout_ms, 0};
     FD_ZERO(&fd_reader); FD_SET(this->socket_descriptor, &fd_reader);
+
+	// struct timespec tn;
+	// clock_gettime(CLOCK_REALTIME, &tn);
+    // unsigned int start = tn.tv_nsec;
 
     int select_ready = select(FD_SETSIZE,&fd_reader,NULL,NULL, &connection_timer);
     //int select_ready = select(socket_descriptor+1,&fd_reader,NULL,NULL, &connection_timer);
@@ -279,7 +305,11 @@ int TFTPClient::waitForPacket(TFTP_Packet* packet, int timeout_ms){
         logger->ERROR("socket error when waiting for packet");
         return TFTP_CLIENT_ERROR_RECEIVE;
     }
-    logger->DEBUG(" server port: "+std::to_string(from.sin_port)+"; my port: "+std::to_string(server_addr->sin_port));
+	// clock_gettime(CLOCK_REALTIME, &tn);
+    // unsigned int end = tn.tv_nsec;
+    // logger->DEBUG("RCV:"+std::to_string(res)+"bits  use:"+ std::to_string(end-start)+"nanosecond");
+    // printf("speed :%dKB/S",  res *1000000*8/(end-start) );
+    //logger->DEBUG(" server port: "+std::to_string(from.sin_port)+"; my port: "+std::to_string(server_addr->sin_port));
     if( server_addr->sin_port == htons(this->server_port)){
         server_addr->sin_port = from.sin_port;
     }

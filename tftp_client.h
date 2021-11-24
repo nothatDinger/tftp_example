@@ -18,6 +18,7 @@
 #include<string>
 #include <netdb.h> 
 #include<sys/stat.h>
+#include<sys/time.h>
 #include "tftp_packet.h"
 #include "logger.h"
 

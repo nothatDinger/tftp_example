@@ -8420,3 +8420,742 @@
 [DEBUG]   logger.cpp 2021-11-21 21:43:13 : Timeout 9 times
 [ERROR]   logger.cpp 2021-11-21 21:43:15 : select timout while waiting for packet
 [ERROR]   logger.cpp 2021-11-21 21:43:15 : There may be connection timeout event
+[Welcome] logger.cpp 2021-11-24 11:34:41 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : sending file, filename: tftp, destination_filename:  tftp, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet0 , expected: 0
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet1 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet2 , expected: 2
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet3 , expected: 3
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet4 , expected: 4
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet5 , expected: 5
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet6 , expected: 6
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet7 , expected: 7
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet8 , expected: 8
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet9 , expected: 9
+[DEBUG]   logger.cpp 2021-11-24 11:34:41 : ACK for packet10 , expected: 10
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet11 , expected: 11
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet12 , expected: 12
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet13 , expected: 13
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet14 , expected: 14
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet15 , expected: 15
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet16 , expected: 16
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet17 , expected: 17
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet18 , expected: 18
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet19 , expected: 19
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet20 , expected: 20
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet21 , expected: 21
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet22 , expected: 22
+[DEBUG]   logger.cpp 2021-11-24 11:34:42 : ACK for packet23 , expected: 23
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet24 , expected: 24
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet25 , expected: 25
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet26 , expected: 26
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet27 , expected: 27
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet28 , expected: 28
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet29 , expected: 29
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet30 , expected: 30
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet31 , expected: 31
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet32 , expected: 32
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet33 , expected: 33
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet34 , expected: 34
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet35 , expected: 35
+[DEBUG]   logger.cpp 2021-11-24 11:34:43 : ACK for packet36 , expected: 36
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet37 , expected: 37
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet38 , expected: 38
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet39 , expected: 39
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet40 , expected: 40
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet41 , expected: 41
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet42 , expected: 42
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet43 , expected: 43
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet44 , expected: 44
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet45 , expected: 45
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet46 , expected: 46
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet47 , expected: 47
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet48 , expected: 48
+[DEBUG]   logger.cpp 2021-11-24 11:34:44 : ACK for packet49 , expected: 49
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet50 , expected: 50
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet51 , expected: 51
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet52 , expected: 52
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet53 , expected: 53
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet54 , expected: 54
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet55 , expected: 55
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet56 , expected: 56
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet57 , expected: 57
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet58 , expected: 58
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet59 , expected: 59
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet60 , expected: 60
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet61 , expected: 61
+[DEBUG]   logger.cpp 2021-11-24 11:34:45 : ACK for packet62 , expected: 62
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet63 , expected: 63
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet64 , expected: 64
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet65 , expected: 65
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet66 , expected: 66
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet67 , expected: 67
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet68 , expected: 68
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet69 , expected: 69
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet70 , expected: 70
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet71 , expected: 71
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet72 , expected: 72
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet73 , expected: 73
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet74 , expected: 74
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet75 , expected: 75
+[DEBUG]   logger.cpp 2021-11-24 11:34:46 : ACK for packet76 , expected: 76
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet77 , expected: 77
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet78 , expected: 78
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet79 , expected: 79
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet80 , expected: 80
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet81 , expected: 81
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet82 , expected: 82
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet83 , expected: 83
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet84 , expected: 84
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet85 , expected: 85
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet86 , expected: 86
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet87 , expected: 87
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet88 , expected: 88
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet89 , expected: 89
+[DEBUG]   logger.cpp 2021-11-24 11:34:47 : ACK for packet90 , expected: 90
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet91 , expected: 91
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet92 , expected: 92
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet93 , expected: 93
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet94 , expected: 94
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet95 , expected: 95
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet96 , expected: 96
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet97 , expected: 97
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet98 , expected: 98
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet99 , expected: 99
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet100 , expected: 100
+[DEBUG]   logger.cpp 2021-11-24 11:34:48 : ACK for packet101 , expected: 101
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet102 , expected: 102
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet103 , expected: 103
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet104 , expected: 104
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet105 , expected: 105
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet106 , expected: 106
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet107 , expected: 107
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet108 , expected: 108
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet109 , expected: 109
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet110 , expected: 110
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet111 , expected: 111
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet112 , expected: 112
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet113 , expected: 113
+[DEBUG]   logger.cpp 2021-11-24 11:34:49 : ACK for packet114 , expected: 114
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet115 , expected: 115
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet116 , expected: 116
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet117 , expected: 117
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet118 , expected: 118
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet119 , expected: 119
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet120 , expected: 120
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet121 , expected: 121
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet122 , expected: 122
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet123 , expected: 123
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet124 , expected: 124
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet125 , expected: 125
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet126 , expected: 126
+[DEBUG]   logger.cpp 2021-11-24 11:34:50 : ACK for packet127 , expected: 127
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet128 , expected: 128
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet129 , expected: 129
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet130 , expected: 130
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet131 , expected: 131
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet132 , expected: 132
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet133 , expected: 133
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet134 , expected: 134
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet135 , expected: 135
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet136 , expected: 136
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet137 , expected: 137
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet138 , expected: 138
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet139 , expected: 139
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet140 , expected: 140
+[DEBUG]   logger.cpp 2021-11-24 11:34:51 : ACK for packet141 , expected: 141
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet142 , expected: 142
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet143 , expected: 143
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet144 , expected: 144
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet145 , expected: 145
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet146 , expected: 146
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet147 , expected: 147
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet148 , expected: 148
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet149 , expected: 149
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet150 , expected: 150
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet151 , expected: 151
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet152 , expected: 152
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet153 , expected: 153
+[DEBUG]   logger.cpp 2021-11-24 11:34:52 : ACK for packet154 , expected: 154
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet155 , expected: 155
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet156 , expected: 156
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet157 , expected: 157
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet158 , expected: 158
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet159 , expected: 159
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet160 , expected: 160
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet161 , expected: 161
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet162 , expected: 162
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet163 , expected: 163
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet164 , expected: 164
+[DEBUG]   logger.cpp 2021-11-24 11:34:53 : ACK for packet165 , expected: 165
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet166 , expected: 166
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet167 , expected: 167
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet168 , expected: 168
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet169 , expected: 169
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet170 , expected: 170
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet171 , expected: 171
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet172 , expected: 172
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet173 , expected: 173
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet174 , expected: 174
+[DEBUG]   logger.cpp 2021-11-24 11:34:54 : ACK for packet175 , expected: 175
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet176 , expected: 176
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet177 , expected: 177
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet178 , expected: 178
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet179 , expected: 179
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet180 , expected: 180
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet181 , expected: 181
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet182 , expected: 182
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet183 , expected: 183
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet184 , expected: 184
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet185 , expected: 185
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet186 , expected: 186
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet187 , expected: 187
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet188 , expected: 188
+[DEBUG]   logger.cpp 2021-11-24 11:34:55 : ACK for packet189 , expected: 189
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet190 , expected: 190
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet191 , expected: 191
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet192 , expected: 192
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet193 , expected: 193
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet194 , expected: 194
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet195 , expected: 195
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet196 , expected: 196
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet197 , expected: 197
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet198 , expected: 198
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet199 , expected: 199
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet200 , expected: 200
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet201 , expected: 201
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet202 , expected: 202
+[DEBUG]   logger.cpp 2021-11-24 11:34:56 : ACK for packet203 , expected: 203
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet204 , expected: 204
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet205 , expected: 205
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet206 , expected: 206
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet207 , expected: 207
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet208 , expected: 208
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet209 , expected: 209
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet210 , expected: 210
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet211 , expected: 211
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet212 , expected: 212
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet213 , expected: 213
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet214 , expected: 214
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet215 , expected: 215
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet216 , expected: 216
+[DEBUG]   logger.cpp 2021-11-24 11:34:57 : ACK for packet217 , expected: 217
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet218 , expected: 218
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet219 , expected: 219
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet220 , expected: 220
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet221 , expected: 221
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet222 , expected: 222
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet223 , expected: 223
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet224 , expected: 224
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet225 , expected: 225
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet226 , expected: 226
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet227 , expected: 227
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet228 , expected: 228
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet229 , expected: 229
+[DEBUG]   logger.cpp 2021-11-24 11:34:58 : ACK for packet230 , expected: 230
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet231 , expected: 231
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet232 , expected: 232
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet233 , expected: 233
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet234 , expected: 234
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet235 , expected: 235
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet236 , expected: 236
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet237 , expected: 237
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet238 , expected: 238
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet239 , expected: 239
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet240 , expected: 240
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet241 , expected: 241
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet242 , expected: 242
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet243 , expected: 243
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet244 , expected: 244
+[DEBUG]   logger.cpp 2021-11-24 11:34:59 : ACK for packet245 , expected: 245
+[DEBUG]   logger.cpp 2021-11-24 11:35:00 : ACK for packet246 , expected: 246
+[DEBUG]   logger.cpp 2021-11-24 11:35:00 : ACK for packet247 , expected: 247
+[DEBUG]   logger.cpp 2021-11-24 11:35:00 : ACK for packet248 , expected: 248
+[DEBUG]   logger.cpp 2021-11-24 11:35:00 : ACK for packet249 , expected: 249
+[DEBUG]   logger.cpp 2021-11-24 11:35:00 : ACK for packet250 , expected: 250
+[DEBUG]   logger.cpp 2021-11-24 11:35:01 : ACK for packet251 , expected: 251
+[DEBUG]   logger.cpp 2021-11-24 11:35:02 : ACK for packet252 , expected: 252
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet253 , expected: 253
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet254 , expected: 254
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet255 , expected: 255
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet256 , expected: 256
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet257 , expected: 257
+[DEBUG]   logger.cpp 2021-11-24 11:35:03 : ACK for packet258 , expected: 258
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet259 , expected: 259
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet260 , expected: 260
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet261 , expected: 261
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet262 , expected: 262
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet263 , expected: 263
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet264 , expected: 264
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet265 , expected: 265
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet266 , expected: 266
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet267 , expected: 267
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet268 , expected: 268
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet269 , expected: 269
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet270 , expected: 270
+[DEBUG]   logger.cpp 2021-11-24 11:35:04 : ACK for packet271 , expected: 271
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet272 , expected: 272
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet273 , expected: 273
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet274 , expected: 274
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet275 , expected: 275
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet276 , expected: 276
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet277 , expected: 277
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet278 , expected: 278
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet279 , expected: 279
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet280 , expected: 280
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet281 , expected: 281
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet282 , expected: 282
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet283 , expected: 283
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet284 , expected: 284
+[DEBUG]   logger.cpp 2021-11-24 11:35:05 : ACK for packet285 , expected: 285
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet286 , expected: 286
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet287 , expected: 287
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet288 , expected: 288
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet289 , expected: 289
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet290 , expected: 290
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet291 , expected: 291
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet292 , expected: 292
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet293 , expected: 293
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet294 , expected: 294
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet295 , expected: 295
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet296 , expected: 296
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet297 , expected: 297
+[DEBUG]   logger.cpp 2021-11-24 11:35:06 : ACK for packet298 , expected: 298
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet299 , expected: 299
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet300 , expected: 300
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet301 , expected: 301
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet302 , expected: 302
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet303 , expected: 303
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet304 , expected: 304
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet305 , expected: 305
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet306 , expected: 306
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet307 , expected: 307
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet308 , expected: 308
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet309 , expected: 309
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet310 , expected: 310
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet311 , expected: 311
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet312 , expected: 312
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet313 , expected: 313
+[DEBUG]   logger.cpp 2021-11-24 11:35:07 : ACK for packet314 , expected: 314
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet315 , expected: 315
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet316 , expected: 316
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet317 , expected: 317
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet318 , expected: 318
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet319 , expected: 319
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet320 , expected: 320
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet321 , expected: 321
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet322 , expected: 322
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet323 , expected: 323
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet324 , expected: 324
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet325 , expected: 325
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet326 , expected: 326
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet327 , expected: 327
+[DEBUG]   logger.cpp 2021-11-24 11:35:08 : ACK for packet328 , expected: 328
+[DEBUG]   logger.cpp 2021-11-24 11:35:09 : ACK for packet329 , expected: 329
+[DEBUG]   logger.cpp 2021-11-24 11:35:09 : ACK for packet330 , expected: 330
+[DEBUG]   logger.cpp 2021-11-24 11:35:09 : ACK for packet331 , expected: 331
+[DEBUG]   logger.cpp 2021-11-24 11:35:09 : ACK for packet332 , expected: 332
+[DEBUG]   logger.cpp 2021-11-24 11:35:09 : ACK for packet333 , expected: 333
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet333 , expected: 334
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : resend 1 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet334 , expected: 334
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet335 , expected: 335
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet336 , expected: 336
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet337 , expected: 337
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet338 , expected: 338
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet339 , expected: 339
+[DEBUG]   logger.cpp 2021-11-24 11:35:10 : ACK for packet340 , expected: 340
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet341 , expected: 341
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet342 , expected: 342
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet343 , expected: 343
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet344 , expected: 344
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet345 , expected: 345
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet346 , expected: 346
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet347 , expected: 347
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet348 , expected: 348
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet349 , expected: 349
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet350 , expected: 350
+[DEBUG]   logger.cpp 2021-11-24 11:35:11 : ACK for packet351 , expected: 351
+[DEBUG]   logger.cpp 2021-11-24 11:35:12 : ACK for packet352 , expected: 352
+[DEBUG]   logger.cpp 2021-11-24 11:35:12 : ACK for packet353 , expected: 353
+[DEBUG]   logger.cpp 2021-11-24 11:35:12 : ACK for packet354 , expected: 354
+[DEBUG]   logger.cpp 2021-11-24 11:35:12 : ACK for packet355 , expected: 355
+[ERROR]   logger.cpp 2021-11-24 11:35:14 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 11:35:14 : resend 2 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:15 : ACK for packet355 , expected: 356
+[DEBUG]   logger.cpp 2021-11-24 11:35:15 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 11:35:17 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : resend 4 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : ACK for packet356 , expected: 356
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : ACK for packet357 , expected: 357
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : ACK for packet358 , expected: 358
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : ACK for packet359 , expected: 359
+[DEBUG]   logger.cpp 2021-11-24 11:35:17 : ACK for packet360 , expected: 360
+[DEBUG]   logger.cpp 2021-11-24 11:35:18 : ACK for packet360 , expected: 361
+[DEBUG]   logger.cpp 2021-11-24 11:35:18 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 11:35:20 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : resend 6 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : ACK for packet360 , expected: 361
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : resend 7 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : ACK for packet361 , expected: 361
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : ACK for packet361 , expected: 362
+[DEBUG]   logger.cpp 2021-11-24 11:35:20 : resend 8 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : ACK for packet362 , expected: 362
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : ACK for packet362 , expected: 363
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : resend 9 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : ACK for packet363 , expected: 363
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : ACK for packet363 , expected: 364
+[DEBUG]   logger.cpp 2021-11-24 11:35:21 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 11:35:21 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 11:49:31 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : sending file, filename: tftp, destination_filename:  tftp, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:61933469nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet0 , expected: 0
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:63394727nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet1 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:56806524nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet2 , expected: 2
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:62066905nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet3 , expected: 3
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:61802509nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet4 , expected: 4
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:74340379nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet5 , expected: 5
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:62787550nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet6 , expected: 6
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:74375846nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet7 , expected: 7
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:80175193nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet8 , expected: 8
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : RCV:4bits  use:65614302nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:31 : ACK for packet9 , expected: 9
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:3378167863nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet10 , expected: 10
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61683354nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet11 , expected: 11
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61465030nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet12 , expected: 12
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:60618704nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet13 , expected: 13
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61628210nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet14 , expected: 14
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:70719134nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet15 , expected: 15
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61691829nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet16 , expected: 16
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:62204227nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet17 , expected: 17
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:62834119nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet18 , expected: 18
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:60936411nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet19 , expected: 19
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:76264249nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet20 , expected: 20
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:62518410nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet21 , expected: 21
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61290703nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet22 , expected: 22
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:93030342nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet23 , expected: 23
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : RCV:4bits  use:61509568nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:32 : ACK for packet24 , expected: 24
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:3356587729nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet25 , expected: 25
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:71418291nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet26 , expected: 26
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:67810589nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet27 , expected: 27
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:94977443nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet28 , expected: 28
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:66749982nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet29 , expected: 29
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:64473654nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet30 , expected: 30
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:63674842nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet31 , expected: 31
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:61471412nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet32 , expected: 32
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:61273051nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet33 , expected: 33
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:76635829nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet34 , expected: 34
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:74052742nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet35 , expected: 35
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:63102821nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet36 , expected: 36
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:66326720nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet37 , expected: 37
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:61405740nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet38 , expected: 38
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : RCV:4bits  use:65272008nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:33 : ACK for packet39 , expected: 39
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:3356466532nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet40 , expected: 40
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:61208619nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet41 , expected: 41
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:61334245nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet42 , expected: 42
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:61243374nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet43 , expected: 43
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:71710869nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet44 , expected: 44
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:60902134nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet45 , expected: 45
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:62962875nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet46 , expected: 46
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:61406410nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet47 , expected: 47
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:61484353nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet48 , expected: 48
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:60547268nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet49 , expected: 49
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:57129110nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet50 , expected: 50
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : RCV:4bits  use:62404797nanosecond
+[DEBUG]   logger.cpp 2021-11-24 11:49:34 : ACK for packet51 , expected: 51
+[Welcome] logger.cpp 2021-11-24 19:13:01 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:13:01 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:13:01 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:13:01 : sending file, filename: tftp, destination_filename:  tftp, mode: octet
+[ERROR]   logger.cpp 2021-11-24 19:13:03 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:03 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:05 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:05 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:07 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:07 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:09 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:09 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:11 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:11 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:13 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:13 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:15 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:15 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:17 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:17 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:19 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:19 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:21 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:21 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:21 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:13:38 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:13:38 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:13:38 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:13:38 : sending file, filename: tftp, destination_filename:  tftp, mode: octet
+[ERROR]   logger.cpp 2021-11-24 19:13:40 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:40 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:42 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:42 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:44 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:44 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:46 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:46 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:48 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:48 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:50 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:50 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:52 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:52 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:54 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:54 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:56 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:56 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:58 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:13:58 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:13:58 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:14:29 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:14:29 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:14:29 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:14:29 : sending file, filename: tftp, destination_filename:  tftp, mode: octet
+[ERROR]   logger.cpp 2021-11-24 19:14:31 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:31 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:33 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:33 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:35 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:35 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:37 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:37 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:39 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:39 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:41 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:41 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:43 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:43 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:45 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:45 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:47 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:47 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:49 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:14:49 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:14:49 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:14:58 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:14:58 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:14:58 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:14:58 : sending file, filename: tftp_client.cpp, destination_filename:  tftp_client.cpp, mode: octet
+[ERROR]   logger.cpp 2021-11-24 19:15:00 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:00 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:02 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:02 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:04 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:04 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:06 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:06 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:08 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:08 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:10 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:10 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:12 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:12 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:14 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:14 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:16 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:16 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:18 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:15:18 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:15:18 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:16:15 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:16:15 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:16:15 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:16:15 : sending file, filename: tftp_client.cpp, destination_filename:  tftp_client.cpp, mode: octet
+[ERROR]   logger.cpp 2021-11-24 19:16:17 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:17 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:19 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:19 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:21 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:21 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:23 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:23 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:25 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:25 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:27 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:27 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:29 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:29 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:31 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:31 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:33 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:33 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:35 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:16:35 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:16:35 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:18:18 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : getting file, filename: yarn.lock, destination_filename: yarn.lock, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : send rrq request
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : RCV:516bits  use:79538026nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:18 : received packet 1
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:3356975746nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 2
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:62164328nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 3
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:62302557nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 4
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:62458834nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 5
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:62815636nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 6
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:516bits  use:62342767nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 7
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : RCV:362bits  use:62191789nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:18:19 : received packet 8
+[Welcome] logger.cpp 2021-11-24 19:20:03 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : sending file, filename: yarn.lock, destination_filename:  yarn.lock, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet0 , expected: 0
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:73657nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet1 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:39198nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet2 , expected: 2
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:33382nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet3 , expected: 3
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:31661nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet4 , expected: 4
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:47346nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet5 , expected: 5
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:46156nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet6 , expected: 6
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:516bits  use:49942nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet7 , expected: 7
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : RCV:362bits  use:41265nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:20:03 : ACK for packet8 , expected: 8
+[Welcome] logger.cpp 2021-11-24 19:21:59 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : getting file, filename: yarn.lock, destination_filename: yarn.lock, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : send rrq request
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : RCV:516bits  use:69376916nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : received packet 1
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : RCV:516bits  use:78501406nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : received packet 2
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : RCV:516bits  use:65996433nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:21:59 : received packet 3
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : RCV:516bits  use:3360415223nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : received packet 4
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : RCV:516bits  use:66113030nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : received packet 5
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : RCV:516bits  use:65468767nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : received packet 6
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : RCV:516bits  use:65657171nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : received packet 7
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : RCV:362bits  use:66033568nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:00 : received packet 8
+[Welcome] logger.cpp 2021-11-24 19:22:16 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:22:16 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:22:16 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:22:16 : sending file, filename: yarn.lock, destination_filename:  yarn.lock, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 19:22:16 : ACK for packet0 , expected: 0
+[DEBUG]   logger.cpp 2021-11-24 19:22:16 : RCV:516bits  use:50308nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:22:17 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:22:17 : resend 1 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 19:22:19 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:22:19 : resend 2 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:21 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:21 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:23 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:23 : resend 4 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 19:22:23 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:22:23 : resend 5 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:25 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:25 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:27 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:27 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:29 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:29 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:31 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:22:31 : resend 9 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 19:22:31 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:22:31 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:22:31 : Failed to resend file
+[Welcome] logger.cpp 2021-11-24 19:26:25 : === Start logging ===
+[DEBUG]   logger.cpp 2021-11-24 19:26:25 : Connecting to 162.14.65.50 on port 69
+[DEBUG]   logger.cpp 2021-11-24 19:26:25 : Socket successfully initialized
+[DEBUG]   logger.cpp 2021-11-24 19:26:25 : sending file, filename: yarn.lock, destination_filename:  yarn.lock, mode: octet
+[DEBUG]   logger.cpp 2021-11-24 19:26:25 : ACK for packet0 , expected: 0
+[DEBUG]   logger.cpp 2021-11-24 19:26:25 : RCV:516bits  use:37415nanosecond
+[DEBUG]   logger.cpp 2021-11-24 19:26:26 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:26:26 : resend 1 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:28 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:28 : resend 2 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 19:26:28 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:26:28 : resend 3 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:30 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:30 : resend 4 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:32 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:32 : resend 5 times when sending file
+[DEBUG]   logger.cpp 2021-11-24 19:26:32 : ACK for packet0 , expected: 1
+[DEBUG]   logger.cpp 2021-11-24 19:26:32 : resend 6 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:34 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:34 : resend 7 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:36 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:36 : resend 8 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:38 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:38 : resend 9 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:40 : select timout while waiting for packet
+[DEBUG]   logger.cpp 2021-11-24 19:26:40 : resend 10 times when sending file
+[ERROR]   logger.cpp 2021-11-24 19:26:40 : Failed to resend file

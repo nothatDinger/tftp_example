@@ -2,6 +2,7 @@
 #include "cmdline.h"
 #include "tftp_client.h"
 #include <iostream>
+#include<sys/time.h>
 using namespace std;
 int main(int argc, char* argv[]){
 
@@ -20,7 +21,7 @@ int main(int argc, char* argv[]){
    		std::cerr<<par.error()<<endl<<par.usage();
     	return 0;
   	}
-	Logger l = Logger(Logger::file_and_terminal, Logger::debug, "./log.txt");
+	Logger l = Logger(Logger::file_and_terminal, Logger::warning, "./log.txt");
 
 	TFTPClient client(&l,par.get<string>("host"), par.get<int>("port"));
 	client.UDPInitSocket();
@@ -29,11 +30,13 @@ int main(int argc, char* argv[]){
 	const char* mode = par.get<string>("mode").c_str();
 	string type = par.get<string>("type");
 
+
 	if(type == "get")
 		client.getFile((char* )filename, (char* )filename, mode);
 	if(type == "put"){
 		client.sendFile((char* )filename, (char* )filename, mode);
 	}
-		
+	
+
 	return 0;
 }
