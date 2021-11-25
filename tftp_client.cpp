@@ -1,4 +1,16 @@
 #include "tftp_client.h"
+
+static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
+   "Not defined, see error message (if any).",
+   "File not found.",
+   "Access violation.",
+   "Disk full or allocation exceeded.",
+   "Illegal TFTP operation.",
+   "Unknown transfer ID.",
+   "File already exists.",
+   "No such user.",
+};
+
 struct sockaddr_in server_addr_;
 TFTPClient::TFTPClient(Logger* logger_,string ip, int port=69){
     TFTP_Packet packt;
@@ -82,7 +94,12 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
         wait_status = waitForPacketACK(last_packet_number, TFTP_CLIENT_SERVER_TIMEOUT, is_lastpacket);
 
         //timeout
-        if( !wait_status){
+        if( wait_status == TFTP_CLIENT_ERROR_RECEIVE){
+            logger->ERROR("Failed to send file");
+            std::cout << "failed\n";
+            return false;
+        }
+        if( wait_status == TFTP_CLIENT_ERROR_TIMEOUT || wait_status == TFTP_CLIENT_ERROR_PACKET_UNEXPECTED){
             loss ++;
             timeout_count ++;
             logger->WARNING("resend "+std::to_string(timeout_count)+" times when sending file");
@@ -91,6 +108,7 @@ bool TFTPClient::sendFile(char* filename, char* destination_filename, const char
                 if (is_lastpacket)
                     break;
                 logger->ERROR("Failed to resend file");
+                std::cout << "failed\n";
                 return false;
             }
             if( last_packet_number == 0)
@@ -213,7 +231,7 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
         //2 bytes opcode + 2 bytes packet number
         if( received_packet.copyData( 2 + 2, buffer, TFTP_PACKET_DATA_SIZE)) {
             file.write(buffer, received_packet.getSize() - 2 - 2); 
-            if (received_packet.getNumber() % 10 == 0)
+            //if (received_packet.getNumber() % 10 == 0)
                 logger->DEBUG("received packet "+std::to_string(received_packet.getNumber()));
 
             packet_ack.createACK(last_packet_number - 1);
@@ -226,43 +244,40 @@ bool TFTPClient::getFile(char* filename, char* destination_filename, const char*
                 break;
                 
             }
-            
-
         }
-
     }
     file.close();
     cout<<"success\n";
     return true;
 }
-bool TFTPClient::waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket){
+int TFTPClient::waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket){
     int wait_status = waitForPacket(&this->received_packet, timeout_ms);
     
     if(wait_status != TFTP_CLIENT_ERROR_NO_ERROR){
         if(wait_status == TFTP_CLIENT_ERROR_CONNECTION_CLOSED && is_lastpacket) {
-            return true;
+            return TFTP_CLIENT_ERROR_NO_ERROR;
         }
-        return false;
+        return TFTP_CLIENT_ERROR_TIMEOUT;
     }
 
     if (received_packet.isError()) {
     	int error_code = received_packet.getWord(2);
 
-        logger->DEBUG("Client received error packet"+ std::to_string(error_code)+" : "\
+        logger->ERROR("Client received error packet"+ std::to_string(error_code)+" : "\
             +std::string(error_message[error_code]));
-		return false;
+		return TFTP_CLIENT_ERROR_RECEIVE;
 	}else
     if( this->received_packet.isACK()){
         logger->DEBUG("ACK for packet"+std::to_string(received_packet.getNumber())+" , expected: " +std::to_string(packet_number));
         if( received_packet.getNumber()!=packet_number)
-            return false;
-        return true;
+            return TFTP_CLIENT_ERROR_PACKET_UNEXPECTED;
+        return TFTP_CLIENT_ERROR_NO_ERROR;
     }
     if( this->received_packet.isData()){
         logger->DEBUG("DATA ACK for packet"+std::to_string(received_packet.getNumber())+" , expected: " +std::to_string(packet_number));
-        return true;
+        return TFTP_CLIENT_ERROR_NO_ERROR;
     }
-    return true;
+    return TFTP_CLIENT_ERROR_NO_ERROR;
     
 }
 int TFTPClient::waitForPacketData(WORD packet_number, int timeout_ms){

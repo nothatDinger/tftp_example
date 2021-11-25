@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
    		std::cerr<<par.error()<<endl<<par.usage();
     	return 0;
   	}
-	Logger l = Logger(Logger::file_and_terminal, Logger::debug, "./log.txt");
+	Logger l = Logger(Logger::file_and_terminal, Logger::warning, "./log.txt");
 
 	TFTPClient client(&l,par.get<string>("host"), par.get<int>("port"));
 	client.UDPInitSocket();

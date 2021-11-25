@@ -1,7 +1,7 @@
 #ifndef TFTPCLIENT
 #define TFTPCLIENT
 
-#define TFTP_CLIENT_SERVER_TIMEOUT 1
+#define TFTP_CLIENT_SERVER_TIMEOUT 2
 #define TFTP_CLIENT_ERROR_MESSAGE_NUM 8
 #define TFTP_RESEND_DEFAULT_CNT 10
 
@@ -22,16 +22,7 @@
 #include "tftp_packet.h"
 #include "logger.h"
 
-static const char *error_message[TFTP_CLIENT_ERROR_MESSAGE_NUM]={
-   "Not defined, see error message (if any).",
-   "File not found.",
-   "Access violation.",
-   "Disk full or allocation exceeded.",
-   "Illegal TFTP operation.",
-   "Unknown transfer ID.",
-   "File already exists.",
-   "No such user.",
-};
+
 
 void unix2dos(string from);
 void dos2unix(string from);
@@ -59,7 +50,7 @@ class TFTPClient {
         bool sendFile(char *filename, char* destination, const char* transfer_mode);
 
         int waitForPacket(TFTP_Packet* packet, int tileout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
-        bool waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket);
+        int waitForPacketACK(WORD packet_number, int timeout_ms, bool is_lastpacket);
 		int waitForPacketData(WORD packet_number, int timeout_ms = TFTP_CLIENT_SERVER_TIMEOUT);
 
         void errorRecieived(TFTP_Packet* error_packet);
